@@ -1,24 +1,59 @@
-# README
+# Fitness_Blog
+>  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby
+- Ruby on Rails
+- git
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+To get a local copy up and running follow these simple example steps.
 
-* Configuration
+Clone the project by using terminal:
 
-* Database creation
+```
+git clone git@github.com:AnselemOdims/Fitness_blog.git
 
-* Database initialization
+cd fitness_blog
 
-* How to run the test suite
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+- To run test 
+  `rspec spec`
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+- Ruby
+- Rails
+
+Rspec gem for testing enviroment
+
+## Author
+
+👤 **ANSELEM ODIMEGWU**
+
+- GitHub: [@AnselemOdims](https://github.com/AnselemOdims)
+- LinkedIn: [Anselem Odimegwu](https://www.linkedin.com/in/anselem-odimegwu/)
+- Email: anselemcloud@gmail.com
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/AnselemOdims/fitness_blog/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
