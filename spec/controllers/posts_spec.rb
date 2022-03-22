@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts controller', :type => :request do
+RSpec.describe 'Posts controller', type: :request do
   describe 'GET /index' do
     before :each do
       get "/users/1/posts"

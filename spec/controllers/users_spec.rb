@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users controller', :type => :request do
+RSpec.describe 'Users controller', type: :request do
   describe 'GET /index' do
     before :each do
       get "/users"
