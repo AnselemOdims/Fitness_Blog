@@ -12,6 +12,10 @@ RSpec.describe 'Users controller', type: :request do
     it 'the response body includes the correct placeholder text' do
       expect(response.body).to include("Here you will find a list of all users")
     end
+
+    it 'the correct response status' do
+      expect(response.status).to eq(200)
+    end
   end
 
   describe 'GET /show' do
@@ -24,6 +28,10 @@ RSpec.describe 'Users controller', type: :request do
 
     it 'the response body includes the correct placeholder text' do
       expect(response.body).to include("You can get one user here")
+    end
+
+    it 'the correct response status' do
+      expect(response.status).to eq(200)
     end
   end
 end
