@@ -1,8 +1,13 @@
 <header>
   <div>
-    <%= link_to image_tag("Fitness_Logo.gif"), root_path %>
+    <%= link_to image_tag("Fitness_Logo.svg"), root_path %>
   </div>
-  <div>
-    <p>User</p>
-  <div>
+  <div class="form-container">
+      <form>
+        <input type="search" placeholder="search" id="search"/>
+        <div>
+          <button type="submit" id="submit-btn"><i class="fas fa-search"></i> Search</button>
+        </div>
+      </form>
+  </div>
 </header>

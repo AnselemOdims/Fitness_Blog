@@ -15,8 +15,8 @@
  */
 
 @import 'normalize';
-@import 'mixins';
 @import 'variables';
+@import 'mixins';
 @import 'header';
 @import 'footer';
 
@@ -40,7 +40,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   position: relative;
-  background: $neutral-color-1
+  background: $neutral-color-1;
+  padding: 0 200px;
 }
 
 ul {
