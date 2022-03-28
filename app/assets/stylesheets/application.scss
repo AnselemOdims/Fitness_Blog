@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'normalize';
+@import 'mixins';
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+/* General page settings */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  background: $neutral-color-1
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

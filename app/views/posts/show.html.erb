@@ -1,5 +1,5 @@
 <div>
-  <p><%= @post.title %></p>
+  <p class="bold"><%= @post.title %></p>
   <p><%= @post.text %></p>
-  <p><%= @post.comments.inspect %></p>
+  <%= link_to 'See all posts', user_posts_path(@post.author) %>
 </div>

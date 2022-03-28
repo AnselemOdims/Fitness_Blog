@@ -1,4 +1,7 @@
 <div>
+  <% if @posts.empty? %>
+    <p>User has no posts yet</p>
+  <% end %>
   <ul>
     <% @posts.each do |post| %>
       <li>
@@ -19,6 +22,8 @@
           </ul>
         </div>
       </li>
+      <%= link_to 'See user', user_path(post.author) %>
     <% end %>
   </ul>
+  
 </div>
