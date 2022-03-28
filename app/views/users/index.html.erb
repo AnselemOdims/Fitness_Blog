@@ -3,5 +3,6 @@
 <ul>
   <% @users.each do |user| %>
     <%= render "shared/user", :user => user %>
+    <%= link_to 'See user', user %>
   <% end %>
 </ul>
