@@ -1,3 +1,17 @@
-<li>
-  <%= "#{user.name} #{user.posts_counter}" %>
+<li class="card">
+  <div>
+    <%= image_tag "#{user.photo}" %>
+  </div>
+  <%= link_to(user) do %>
+    <div class="card-details">
+      <div>
+        <h2><%= user.name %></h2>
+        <p><%= user.bio[0..100]... %></p>
+      </div>
+      <div>
+        <small>Number of posts:<%= user.posts_counter || 0 %></small>
+        <%= link_to 'View User', user %>
+      </div>
+    </div>
+  <% end %>
 </li>

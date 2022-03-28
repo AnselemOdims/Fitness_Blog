@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+li.card {
+  @include display(row, initial, center);
+  margin: 30px 0 50px;
+
+  div {
+    &:nth-of-type(1) {
+      img {
+        width: 400px;
+        height: 300px;
+        border-radius: 20px
+      }
+    }
+  }
+
+      div.card-details {
+       height: 250px;
+       width: 500px;
+       margin-left: -70px;
+       border-radius: 20px;
+       background: #fff;
+       box-shadow: $shadow-2;
+       transition: all 0.5s linear;
+       padding:20px 50px ;
+ 
+       &:hover {
+         cursor: pointer;
+         box-shadow: $shadow-3;
+       }
+
+         > a {
+          div {
+            margin-bottom: 2.5rem;
+ 
+          h2 {
+           font-weight: 500;
+           font-size: 2rem;
+           }
+         }
+         }
+         
+        > div {
+          @include display(row, space-between, center);
+
+          a {
+            &:last-of-type {
+              background: $primary-color-1;
+              color: #fff;
+              padding: 10px 16px;
+              border-radius: 5px;
+
+            }
+          }
+        }
+     }
+}
