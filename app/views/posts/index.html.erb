@@ -1,1 +1,23 @@
-<h1>Here are the post for all users</h1>
+<div>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <div>
+          <p><%= post.author.name %></p>
+          <p><%= post.title %></p>
+          <p><%= post.text %></p>
+        </div>
+        <div>
+          <ul>
+            <% post.recent_comments.each do |comment| %>
+              <li>
+                <p><%= comment.author.name %></p>
+                <p><%= comment.text %></p>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

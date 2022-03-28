@@ -1,3 +1,12 @@
 <section>
-  <div><p><%= @user.name %></p></div>
-</div>
+  <div><p><%= @user.inspect %></p></div>
+  <%= link_to 'Show all Users', users_path %>
+  <div>
+    <% @user.fetch_recent_posts.each do |post| %>
+      <ul>
+        <li><%= post.text %></li>
+      </ul>
+    <% end %>
+  </div>
+  <button><%= link_to 'Show all posts', user_posts_path(@user) %></button>
+</section>
