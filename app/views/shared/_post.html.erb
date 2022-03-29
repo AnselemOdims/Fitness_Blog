@@ -8,8 +8,9 @@
         <small> Likes: <%= post.likes_counter || 0 %></small>
       </p>
       <div>
-      <%= link_to image_tag("comment.svg")%>
-    </div>
+        <%= link_to image_tag("comment.svg")%>
+        <%= link_to image_tag("like.svg")%>
+      </div>
     </div>
   </li>
 <% end %>
