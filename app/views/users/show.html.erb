@@ -6,11 +6,11 @@
   </div>
   
   <div>
-    <% @user.fetch_recent_posts.each do |post| %>
-      <ul>
-        <%= render 'shared/post', :post => post %>
-      </ul>
-    <% end %>
+    <ul>
+      <% @user.fetch_recent_posts.each do |post| %>
+          <%= render 'shared/post', :post => post %>
+      <% end %>
+    </ul>
   </div>
   <div class="links" >
     <button><%= link_to 'Show all Users', users_path %></button>

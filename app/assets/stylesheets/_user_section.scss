@@ -2,7 +2,7 @@
 @import 'mixins';
 
 
-section.show-user {
+.show-user {
   margin-bottom: 50px;
 
   li.card {
@@ -30,22 +30,6 @@ section.show-user {
       border-radius:10px;
       box-shadow: $shadow-1;
       margin-bottom: 20px
-    }
-  }
-
-  li.post {
-    border-left: solid 10px $accent-color-1;
-    background: #fff;
-    border-radius:5px;
-    box-shadow: $shadow-2;
-    padding: 10px;
-    margin-bottom: 40px;
-
-    p {
-      &:nth-of-type(2) {
-        display: flex;
-        justify-content: flex-end;
-      }
     }
   }
 
@@ -86,6 +70,22 @@ section.show-user {
           }
         }
       }
+    }
+  }
+}
+
+li.post {
+  border-left: solid 10px $accent-color-1;
+  background: #fff;
+  border-radius:5px;
+  box-shadow: $shadow-2;
+  padding: 10px;
+  margin-bottom: 40px;
+
+  p {
+    &:nth-of-type(2) {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

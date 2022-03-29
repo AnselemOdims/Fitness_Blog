@@ -9,7 +9,7 @@
           <p>Number of posts:<%= user.posts_counter || 0 %></p>
       </div>
       <% if current_page?(users_path) %>
-        <p><%= user.bio[0..100]... %></p>
+        <p><%= user.bio[0..150]... %></p>
       <% end %> 
       <div>
         <% if current_page?(users_path) %>

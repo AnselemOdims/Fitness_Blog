@@ -1,16 +1,14 @@
-<div>
+<section>
   <% if @posts.empty? %>
     <p>User has no posts yet</p>
   <% end %>
+  <div class="show-user" >
+    <%= render "shared/user", :user => @posts[0].author %>
+  </div>
   <ul>
     <% @posts.each do |post| %>
       <li>
-        <div>
-          <p><%= post.author.name %></p>
-          <p><%= post.title %></p>
-          <p><%= post.text %></p>
-        </div>
-        <%= link_to 'See full post', user_post_path(post.author, post) %>
+        <%= render 'shared/post', :post => post %>
         <div>
           <ul>
             <% post.recent_comments.each do |comment| %>
@@ -22,8 +20,7 @@
           </ul>
         </div>
       </li>
-      <%= link_to 'See user', user_path(post.author) %>
     <% end %>
   </ul>
   
-</div>
+</section>
