@@ -32,7 +32,8 @@ li.card {
 
          > a {
           div {
-            margin-bottom: 2.5rem;
+            @include display(row, space-between, center);
+            margin-bottom: 1rem;
  
           h2 {
            font-weight: 500;
@@ -45,12 +46,15 @@ li.card {
           @include display(row, space-between, center);
 
           a {
+            &:first-of-type {
+              align-self: flex-end
+            }
+
             &:last-of-type {
               background: $primary-color-1;
               color: #fff;
               padding: 10px 16px;
               border-radius: 5px;
-
             }
           }
         }

@@ -1,12 +1,19 @@
-<section>
-  <div><p><%= @user.inspect %></p></div>
-  <%= link_to 'Show all Users', users_path %>
+<section class="show-user">
+  <%= render "shared/user", :user => @user %>
+  <div>
+    <h5>Bio</h5>
+    <p><%= @user.bio %></p>
+  </div>
+  
   <div>
     <% @user.fetch_recent_posts.each do |post| %>
       <ul>
-        <li><%= post.text %></li>
+        <%= render 'shared/post', :post => post %>
       </ul>
     <% end %>
   </div>
-  <button><%= link_to 'Show all posts', user_posts_path(@user) %></button>
+  <div class="links" >
+    <button><%= link_to 'Show all Users', users_path %></button>
+    <button><%= link_to 'Show all posts', user_posts_path(@user) %></button>
+  </div>
 </section>

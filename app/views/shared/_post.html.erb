@@ -1,0 +1,8 @@
+<li class="post">
+  <h5>Post #<%= "#{post.id}" %> <%= post.title %></h5>
+  <p><%= post.text %></p>
+  <p> 
+    <small>Comments: <%= post.comments_counter || 0 %></small>
+    <small>Likes: <%= post.likes_counter || 0 %></small>
+  </p>
+</li>

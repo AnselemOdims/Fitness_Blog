@@ -5,12 +5,16 @@
   <%= link_to(user) do %>
     <div class="card-details">
       <div>
-        <h2><%= user.name %></h2>
-        <p><%= user.bio[0..100]... %></p>
+          <h2><%= user.name %></h2>
+          <p>Number of posts:<%= user.posts_counter || 0 %></p>
       </div>
+      <% if current_page?(users_path) %>
+        <p><%= user.bio[0..100]... %></p>
+      <% end %> 
       <div>
-        <small>Number of posts:<%= user.posts_counter || 0 %></small>
-        <%= link_to 'View User', user %>
+        <% if current_page?(users_path) %>
+          <%= link_to 'View User', user %>
+        <% end %>
       </div>
     </div>
   <% end %>
