@@ -1,0 +1,18 @@
+<div class="full-post">
+      <div>
+      <h5><%= @post.title %> by <%= @post.author.name %></h5>
+      <p> 
+        <small>Comments: <%= @post.comments_counter || 0 %>, </small>
+        <small> Likes: <%= @post.likes_counter || 0 %></small>
+      </p>
+    </div>
+    <p class="bold"><%= @post.text %></p>
+</div>
+<%= form_with model: [:post, @comment] do |form| %>
+  <div>
+    <%= form.text_field :text, placeholder: 'Comment' %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
