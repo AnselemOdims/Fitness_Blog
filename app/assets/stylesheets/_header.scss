@@ -5,7 +5,6 @@ header {
   @include display(row, space-between, center);
 
   div {
-
     &:first-of-type {
       @include display(row, initial, center);
 
@@ -23,44 +22,46 @@ header {
         justify-content: space-between;
         box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 
-      div {
-        border-radius: 2px;
-
-        button {
-          margin: 5px 5px 5px 10px;
-          background: $primary-color-1;
-          border: none;
-          color: #fff;
-          font-size: 0.9rem;
+        div {
           border-radius: 2px;
-          box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
-          transition: background ease-out 0.5s 0.1s;
-          cursor: pointer;
-          padding: 8px 25px;
-          display: flex;
 
-          &:hover {
-            background: $primary-color-2;
+          button {
+            margin: 5px 5px 5px 10px;
+            background: $primary-color-1;
+            border: none;
+            color: #fff;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+            transition: background ease-out 0.5s 0.1s;
+            cursor: pointer;
+            padding: 8px 25px;
+            display: flex;
+            font-family: $font-1;
+            font-weight: bold;
+
+            &:hover {
+              background: $primary-color-2;
+            }
+
+            &:focus {
+              outline: none;
+            }
           }
+        }
+
+        input {
+          border: none;
+          padding: 10px;
+          border-radius: 2px;
+          font: $primary-color-1;
+          font-family: $font-1;
 
           &:focus {
             outline: none;
           }
         }
       }
-
-      input {
-        border: none;
-        padding: 10px;
-        border-radius: 2px;
-        font: $primary-color-1;
-
-        &:focus {
-          outline: none;
-        }
-      }
     }
-    }
-    
   }
 }
