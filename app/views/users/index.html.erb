@@ -1,1 +1,5 @@
-<h1>Here you will find a list of all users</h1>
+<ul>
+  <% @users.each do |user| %>
+    <%= render "shared/user", :user => user %>
+  <% end %>
+</ul>

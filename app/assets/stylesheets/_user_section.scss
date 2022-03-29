@@ -1,0 +1,95 @@
+/* stylelint-disable no-descending-specificity */
+@import 'variables';
+@import 'mixins';
+
+.show-user {
+  margin-bottom: 50px;
+
+  li.card {
+    margin: 10px 0;
+
+    div {
+      &:nth-of-type(1) {
+        img {
+          width: 350px;
+          height: 250px;
+        }
+      }
+    }
+
+    div.card-details {
+      height: 180px;
+      width: 560px;
+    }
+  }
+
+  > div {
+    &:first-of-type {
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: $shadow-1;
+      margin-bottom: 20px;
+      font-family: $font-1;
+    }
+  }
+
+  div.links {
+    @include display(row, space-between, center);
+
+    button {
+      @include button-1;
+
+      font-family: $font-1;
+
+      a {
+        color: $primary-color-1;
+      }
+
+      &:hover {
+        background: $primary-color-1;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      &:first-of-type {
+        border: solid 2px $accent-color-1;
+
+        a {
+          color: $accent-color-1;
+        }
+
+        &:hover {
+          background: $accent-color-1;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+li.post {
+  border-left: solid 8px $accent-color-1;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: $shadow-2;
+  padding: 10px;
+  margin-top: 20px;
+  font-family: $font-1;
+
+  p {
+    &:nth-of-type(2) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.all-posts {
+  margin-bottom: 50px;
+}

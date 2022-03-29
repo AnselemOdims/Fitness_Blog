@@ -1,0 +1,76 @@
+/* stylelint-disable no-descending-specificity */
+@import 'variables';
+@import 'mixins';
+@import 'keyframes';
+
+li.card {
+  @include display(row, initial, center);
+
+  margin: 30px 0 50px;
+  font-family: $font-1;
+
+  div {
+    &:nth-of-type(1) {
+      img {
+        width: 400px;
+        height: 300px;
+        border-radius: 15px;
+        box-shadow: $shadow-2;
+        transition: all 0.5s ease-out;
+
+        &:hover {
+          @include shadow-right;
+        }
+      }
+    }
+  }
+
+  div.card-details {
+    height: 250px;
+    width: 500px;
+    margin-left: -70px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: $shadow-2;
+    transition: all 0.5s linear;
+    padding: 20px 50px;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: $shadow-3;
+    }
+
+    > a {
+      div {
+        @include display(row, space-between, center);
+
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    > div {
+      @include display(row, space-between, center);
+
+      a {
+        &:first-of-type {
+          align-self: flex-end;
+          font-family: $font-1;
+          font-weight: bold;
+        }
+
+        &:last-of-type {
+          background: $primary-color-1;
+          color: #fff;
+          padding: 10px 16px;
+          border-radius: 5px;
+          font-family: $font-1;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

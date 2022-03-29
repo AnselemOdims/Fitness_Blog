@@ -1,0 +1,41 @@
+@import 'variables';
+@import 'mixins';
+
+.comments {
+  border-left: solid 6px red;
+  margin: 0 0 40px 10px;
+  padding: 20px;
+  background: $neutral-color-2;
+  font-family: $font-1;
+}
+
+.full-post {
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: $shadow-2;
+  font-family: $font-1;
+
+  > div {
+    @include display(row, space-between, center);
+  }
+}
+
+.post-btn {
+  @include button-1;
+
+  border: solid 2px $accent-color-1;
+  font-family: $font-1;
+
+  a {
+    color: $accent-color-1;
+  }
+
+  &:hover {
+    background: $accent-color-1;
+
+    a {
+      color: #fff;
+    }
+  }
+}

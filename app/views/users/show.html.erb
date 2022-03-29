@@ -1,1 +1,19 @@
-<h1>You can get one user here</h1>
+<section class="show-user">
+  <%= render "shared/user", :user => @user %>
+  <div>
+    <h5>Bio</h5>
+    <p><%= @user.bio %></p>
+  </div>
+  
+  <div>
+    <ul>
+      <% @user.fetch_recent_posts.each do |post| %>
+          <%= render 'shared/post', :post => post %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="links" >
+    <button><%= link_to 'See all users', users_path %></button>
+    <button><%= link_to 'See all posts', user_posts_path(@user) %></button>
+  </div>
+</section>
