@@ -1,5 +1,16 @@
-<div>
-  <p class="bold"><%= @post.title %></p>
-  <p><%= @post.text %></p>
+<section>
+  <div>
+    <h5>Post #<%= "#{@post.id}" %> by <%= @post.author.name %></h5>
+    <p> 
+      <small>Comments: <%= @post.comments_counter || 0 %>, </small>
+      <small> Likes: <%= @post.likes_counter || 0 %></small>
+    </p>
+  </div>
+  <p class="bold"><%= @post.text %></p>
+  <div> 
+    <ul>
+      <%= @post.comments.inspect %>
+    </ul>
+  </div>
   <%= link_to 'See all posts', user_posts_path(@post.author) %>
-</div>
+</section>

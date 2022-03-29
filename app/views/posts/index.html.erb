@@ -9,16 +9,17 @@
     <% @posts.each do |post| %>
       <li>
         <%= render 'shared/post', :post => post %>
-        <div>
+        <% if post.recent_comments != [] %>
+        <div class="comments">
           <ul>
             <% post.recent_comments.each do |comment| %>
               <li>
-                <p><%= comment.author.name %></p>
-                <p><%= comment.text %></p>
+                <p><%= comment.author.name %>: <%= comment.text %></p>
               </li>
             <% end %>
           </ul>
         </div>
+        <% end %>
       </li>
     <% end %>
   </ul>
