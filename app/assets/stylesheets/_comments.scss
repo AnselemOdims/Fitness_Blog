@@ -1,8 +1,38 @@
 @import 'variables';
+@import 'mixins';
 
 .comments {
-  border-left: solid 8px red;
+  border-left: solid 6px red;
   margin: 0 0px 40px 10px;
   padding: 20px;
   background: $neutral-color-2;
+}
+
+.full-post {
+  padding:20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: $shadow-2;
+
+  > div {
+    @include display(row, space-between, center);
+  }
+}
+
+.post-btn {
+  @include button-1;
+
+  border: solid 1px $accent-color-1;
+        
+    a {
+      color: $accent-color-1;
+    }
+
+    &:hover {
+      background: $accent-color-1;
+
+      a {
+        color: #fff;
+      }
+    }
 }

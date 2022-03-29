@@ -1,16 +1,26 @@
 <section>
-  <div>
-    <h5>Post #<%= "#{@post.id}" %> by <%= @post.author.name %></h5>
-    <p> 
-      <small>Comments: <%= @post.comments_counter || 0 %>, </small>
-      <small> Likes: <%= @post.likes_counter || 0 %></small>
-    </p>
+  <div class="full-post">
+    <div>
+      <h5>Post #<%= "#{@post.id}" %> by <%= @post.author.name %></h5>
+      <p> 
+        <small>Comments: <%= @post.comments_counter || 0 %>, </small>
+        <small> Likes: <%= @post.likes_counter || 0 %></small>
+      </p>
+    </div>
+    <p class="bold"><%= @post.text %></p>
   </div>
-  <p class="bold"><%= @post.text %></p>
-  <div> 
+  <% if @post.comments != [] %>
+  <div class="comments">
     <ul>
-      <%= @post.comments.inspect %>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <p><%= comment.author.name %>: <%= comment.text %></p>
+        </li>
+      <% end %>
     </ul>
   </div>
-  <%= link_to 'See all posts', user_posts_path(@post.author) %>
+  <% end %>
+  <button class='post-btn'>
+    <%= link_to 'See all posts', user_posts_path(@post.author) %>
+  </button>
 </section>

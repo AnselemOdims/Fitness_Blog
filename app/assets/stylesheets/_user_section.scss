@@ -19,7 +19,7 @@
 
     div.card-details {
       height: 180px;
-      width: 500px;
+      width: 560px;
     }
   }
 
@@ -37,12 +37,8 @@
     @include display(row, space-between, center);
 
     button {
-      padding: 15px;
-      border: solid 1px $primary-color-1;
-      background: transparent;
-      border-radius: 8px;
-      cursor: pointer;
-
+      @include button-1;
+      
       a {
         color: $primary-color-1;
       }
@@ -87,4 +83,8 @@ li.post {
       justify-content: flex-end;
     }
   }
+}
+
+.all-posts {
+  margin-bottom: 50px;
 }
