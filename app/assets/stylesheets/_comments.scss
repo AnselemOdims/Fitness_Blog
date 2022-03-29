@@ -58,3 +58,38 @@
     }
   }
 }
+
+.posts-btn {
+  @include display(row, space-between, center);
+
+  position: fixed;
+  top: 35vh;
+  right: 0;
+  background: $primary-color-1;
+  border: solid 1px red;
+  color: #fff;
+  border-radius: 12px 0 0 12px;
+  padding: 16px;
+  font-family: $font-1;
+  width: 50px;
+  transition: all 0.7s ease-out;
+
+  p {
+    display: none;
+    margin: 0;
+    font-weight: 10px;
+  }
+
+  img {
+    width: 15px
+  }
+
+  &:hover {
+    width: 140px;
+
+    p {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+}
