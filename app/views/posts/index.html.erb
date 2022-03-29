@@ -11,7 +11,7 @@
         <%= render 'shared/post', :post => post %>
         <% if post.recent_comments != [] %>
         <div class="comments">
-          <ul>
+          <ul class="progress-bar">
             <% post.recent_comments.each do |comment| %>
               <li>
                 <p><%= comment.author.name %>: <%= comment.text %></p>
