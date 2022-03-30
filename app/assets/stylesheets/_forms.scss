@@ -50,7 +50,18 @@
         border: solid 2px $primary-color-1;
         outline: none
       }
+
+      &.comment-text {
+        align-self: flex-start;
+
+      }
     }
+  }
+}
+
+.comment-form {
+  form {
+    margin-top: 10px
   }
 }
 

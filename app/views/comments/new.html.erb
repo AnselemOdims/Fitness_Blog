@@ -8,11 +8,13 @@
     </div>
     <p class="bold"><%= @post.text %></p>
 </div>
-<%= form_with model: [:post, @comment] do |form| %>
-  <div>
-    <%= form.text_field :text, placeholder: 'Comment' %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<div class="form-group comment-form">
+  <%= form_with model: [:post, @comment] do |form| %>
+    <div class="comment-text">
+      <%= form.text_area :text, placeholder: 'Write your comment...' %>
+    </div>
+    <div class="comment-text">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
