@@ -16,8 +16,26 @@ Clone the project by using terminal:
 ```
 git clone git@github.com:AnselemOdims/Fitness_blog.git
 
+```
+```
 cd fitness_blog
 
+```
+and then run the following command
+
+```
+bundle install
+```
+
+### Development
+
+- Create database and run migrations using 
+```
+  bin/rails db:setup
+```
+- Start the server using 
+```
+  bin/rails s
 ```
 
 - To run test 
