@@ -44,7 +44,21 @@
   @include display(row, space-between, center);
 
   > div {
+    @include display(row, space-between, center);
+
     a {
+      img {
+        width: 35px;
+        margin-right: 8px;
+      }
+    }
+
+    button {
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+      
       img {
         width: 35px;
         margin-right: 8px;
