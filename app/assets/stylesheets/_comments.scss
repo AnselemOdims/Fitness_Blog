@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 @import 'variables';
 @import 'mixins';
 
@@ -58,7 +59,7 @@
       outline: none;
       background: none;
       cursor: pointer;
-      
+
       img {
         width: 35px;
         margin-right: 8px;
@@ -66,9 +67,9 @@
     }
   }
 
-   p {
+  p {
     small {
-      font-weight: 700
+      font-weight: 700;
     }
   }
 }
@@ -91,7 +92,7 @@
   p {
     display: none;
     margin: 0;
-    font-weight: 10px;
+    font-weight: 600;
   }
 
   img {
@@ -100,7 +101,7 @@
   }
 
   &:hover {
-    width: 140px;
+    width: 150px;
 
     p {
       display: block;
@@ -108,7 +109,7 @@
     }
 
     img {
-      transform: rotate(360deg)
+      transform: rotate(360deg);
     }
   }
 }

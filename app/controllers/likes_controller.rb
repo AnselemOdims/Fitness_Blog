@@ -5,9 +5,9 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_to user_post_path(current_user, @post)}
+        format.html { redirect_to user_post_path(current_user, @post) }
       else
-        format.html { redirect_to @post}
+        format.html { redirect_to @post }
       end
     end
   end

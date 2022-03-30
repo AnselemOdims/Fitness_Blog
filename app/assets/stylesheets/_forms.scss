@@ -2,9 +2,9 @@
 @import 'mixins';
 
 .form-group {
-
   form {
     @include display(column, space-between, center);
+
     margin-top: 40px;
 
     > div {
@@ -43,17 +43,16 @@
           background: $primary-color-1;
           color: #fff;
         }
-
       }
 
-      input[type="text"]:focus, textarea:focus {
+      input[type="text"]:focus,
+      textarea:focus {
         border: solid 2px $primary-color-1;
-        outline: none
+        outline: none;
       }
 
       &.comment-text {
         align-self: flex-start;
-
       }
     }
   }
@@ -61,7 +60,7 @@
 
 .comment-form {
   form {
-    margin-top: 10px
+    margin-top: 10px;
   }
 }
 
@@ -70,7 +69,7 @@
   font-family: $font-1;
 
   h2 {
-    margin: 0
+    margin: 0;
   }
 
   hr {

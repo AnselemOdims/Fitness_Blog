@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         flash.now[:success] = 'Comment was successful'
-        format.html { redirect_to user_post_path(current_user, @comment.post)}
+        format.html { redirect_to user_post_path(current_user, @comment.post) }
       else
         flash.now[:error] = 'Comment was not saved'
         format.html { render :new }
