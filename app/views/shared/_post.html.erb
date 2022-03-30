@@ -2,9 +2,19 @@
   <li class="post">
     <h5>Post #<%= "#{post.id}" %> <%= post.title %></h5>
     <p><%= post.text[0..200] ... %></p>
-    <p> 
-      <small>Comments: <%= post.comments_counter || 0 %>, </small>
-      <small> Likes: <%= post.likes_counter || 0 %></small>
-    </p>
+    <div class="comment-section">
+      <p> 
+        <small>Comments: <%= post.comments_counter || 0 %>, </small>
+        <small> Likes: <%= post.likes_counter || 0 %></small>
+      </p>
+      <div>
+        <%= link_to new_post_comment_path(post) do %>
+          <%= image_tag("comment.svg")%>
+        <% end %>
+        <%= button_to post_likes_path(post), method: 'post' do %>
+          <%= image_tag("like.svg") %>
+        <% end %>
+      </div>
+    </div>
   </li>
 <% end %>

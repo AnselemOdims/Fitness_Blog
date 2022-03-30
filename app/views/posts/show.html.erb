@@ -1,7 +1,7 @@
 <section>
   <div class="full-post">
     <div>
-      <h5>Post #<%= "#{@post.id}" %> by <%= @post.author.name %></h5>
+      <h5><%= @post.title %> by <%= @post.author.name %></h5>
       <p> 
         <small>Comments: <%= @post.comments_counter || 0 %>, </small>
         <small> Likes: <%= @post.likes_counter || 0 %></small>
