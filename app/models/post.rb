@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :comments, foreign_key: 'post_id', dependent: :destroy
   has_many :likes, foreign_key: 'post_id', dependent: :destroy
   after_save :update_posts_counter
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 250 }
 
   def recent_comments
     comments.order('created_at DESC').limit(5)
