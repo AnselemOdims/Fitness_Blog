@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(author_id: params[:user_id])
+    @posts = Post.includes(:comments, :likes).where(author_id: params[:user_id])
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments, :likes).find(params[:id])
   end
 
   def new
@@ -16,10 +16,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        flash[:success] = 'Post created successfully'
+        flash[:success] = 'Post was created successfully'
         format.html { redirect_to user_posts_url(current_user) }
       else
-        flash.now[:error] = 'Ooops! Post could not be saved'
+        flash.now[:error] = 'Ooops!!! Something went wrong'
         format.html { render :new }
       end
     end

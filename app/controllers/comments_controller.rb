@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def new
-    @post = Post.find(params[:post_id])
+    @post = Post.includes(:comments, :likes).find(params[:post_id])
     @comment = Comment.new
   end
 
@@ -10,10 +10,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        flash.now[:success] = 'Comment was successful'
+        flash.now[:success] = 'Comment was made successfully'
         format.html { redirect_to user_post_path(current_user, @comment.post) }
       else
-        flash.now[:error] = 'Comment was not saved'
+        flash.now[:error] = 'Comment could not be saved'
         format.html { render :new }
       end
     end
