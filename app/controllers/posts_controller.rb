@@ -16,10 +16,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        flash[:success] = 'Post created successfully'
+        flash[:success] = 'Post was created successfully'
         format.html { redirect_to user_posts_url(current_user) }
       else
-        flash.now[:error] = 'Ooops! Post could not be saved'
+        flash.now[:error] = 'Ooops!!! Something went wrong'
         format.html { render :new }
       end
     end
