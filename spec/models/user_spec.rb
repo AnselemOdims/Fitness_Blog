@@ -20,4 +20,8 @@ RSpec.describe User, type: :model do
     user.posts_counter = -1
     expect(user).to_not_be_valid
   end
+
+  it 'should have a query limit of 3' do
+    expect(user.fetch_recent_posts).to query_limit_eq(3)
+  end
 end

@@ -35,4 +35,12 @@ RSpec.describe Post, type: :model do
     post.likes_counter = -1
     expect(post).to_not_be_valid
   end
+
+  it 'should have a query limit of 5' do
+    expect(post.recent_comments).to query_limit_eq(5)
+  end
+
+  it 'should increment posts_counter' do
+    expect(post.author.posts_counter).to eq 1
+  end
 end
