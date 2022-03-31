@@ -9,7 +9,7 @@ RSpec.describe Comment, type: :model do
 
   it 'should create a comment' do
     expect(user.comments[0]).to eq(comment)
-  end 
+  end
 
   it 'should increment comments_counter' do
     expect(comment.post.comments_counter).to eq 1
