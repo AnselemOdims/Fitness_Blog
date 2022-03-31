@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(author_id: params[:user_id])
+    @posts = Post.includes(:comments, :likes).where(author_id: params[:user_id])
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments, :likes).find(params[:id])
   end
 
   def new
