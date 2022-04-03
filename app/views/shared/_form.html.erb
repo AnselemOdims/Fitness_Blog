@@ -1,11 +1,18 @@
 <%= form_with(model: post) do |form| %>
-  <div>
-    <%= form.text_field :title, placeholder: 'Post title' %>
-  </div>
-  <div>
-    <%= form.text_area :text, placeholder: 'Post details..' %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.text_field :title, placeholder: 'Post title' %>
+    </div>
+    <div>
+      <%= form.text_area :text, placeholder: 'Post details..' %>
+    </div>
+    <% if post.errors.any? %>
+    <div>
+      <p class='error'>
+          <%= post.errors.full_messages[0] %>
+      </p>
+      </div>
+    <% end %>
+    <div>
+      <%= form.submit %>
+    </div>
 <% end %>
