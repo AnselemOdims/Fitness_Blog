@@ -18,8 +18,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        flash[:success] = 'Post was created successfully'
-        format.html { redirect_to user_posts_url(current_user) }
+        format.html { redirect_to user_posts_url(current_user), notice: 'Post was created successfully' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
