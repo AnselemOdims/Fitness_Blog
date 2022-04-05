@@ -2,14 +2,15 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  has_many :posts, foreign_key: 'author_id', dependent: :destroy
-  has_many :comments, foreign_key: 'author_id', dependent: :destroy
-  has_many :likes, foreign_key: 'author_id', dependent: :destroy
-  validates :name, presence: true
-  validates :email, presence: true, :uniqueness => { :case_sensitive => false }
+         :recoverable, :rememberable, :validatable,
+         :confirmable, :lockable, :timeoutable, :trackable
+  has_many :posts, foreign_key: "author_id", dependent: :destroy
+  has_many :comments, foreign_key: "author_id", dependent: :destroy
+  has_many :likes, foreign_key: "author_id", dependent: :destroy
+  # validates :name, presence: true
+  # validates :email, presence: true, :uniqueness => { :case_sensitive => false }
 
   def fetch_recent_posts
-    posts.order('created_at DESC').limit(3)
+    posts.order("created_at DESC").limit(3)
   end
 end
