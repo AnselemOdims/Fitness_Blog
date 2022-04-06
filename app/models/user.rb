@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def fetch_recent_posts
     posts.order('created_at DESC').limit(3)
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
