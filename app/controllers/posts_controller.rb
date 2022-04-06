@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:comments, :likes).where(author_id: params[:user_id])
+    @user = User.find(params[:user_id])
   end
 
   def show
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     authorize! :destroy, @post
     @post.destroy
-    flash[:notice] = 'Post deleted'
+    flash[:notice] = 'Post deleted successfully'
     redirect_to user_posts_path(@post.author)
   end
 

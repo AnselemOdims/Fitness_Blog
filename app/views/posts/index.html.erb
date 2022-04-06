@@ -1,10 +1,10 @@
 <section class='all-posts'>
+  <div class="show-user" >
+    <%= render "shared/user", :user => @user %>
+  </div>
   <% if @posts.empty? %>
     <p>User has no posts yet</p>
   <% else %>
-  <div class="show-user" >
-    <%= render "shared/user", :user => @posts[0].author %>
-  </div>
   <ul>
     <% @posts.each do |post| %>
       <li>
