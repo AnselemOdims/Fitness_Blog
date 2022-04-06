@@ -26,4 +26,10 @@
   <button class='post-btn'>
     <%= link_to 'See all posts', user_posts_path(@post.author) %>
   </button>
+  <%= link_to new_post_path do %>
+    <div class="posts-btn">
+      <%= image_tag 'add.svg' %>
+      <p>Create Post</p>
+    </div>
+  <% end %>
 </section>
