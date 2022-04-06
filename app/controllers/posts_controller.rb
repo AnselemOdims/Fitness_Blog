@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to user_posts_url(current_user), notice: "Post was created successfully" }
+        format.html { redirect_to user_posts_url(current_user), notice: 'Post was created successfully' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
     @post.comments.destroy_all
     @post.destroy
-    flash[:notice] = "Post deleted"
+    flash[:notice] = 'Post deleted'
     redirect_to user_posts_path(@user)
   end
 
