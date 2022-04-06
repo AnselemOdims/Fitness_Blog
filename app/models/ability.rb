@@ -12,13 +12,13 @@ class Ability
       can :create, Post
 
       can :destroy, Post do |post|
-        post.id == user.id
+        post.author_id == user.id
       end
 
       can :create, Comment
 
       can :destroy, Comment do |comment|
-        comment.user_id == user.id
+        comment.author_id == user.id
       end
 
       can :create, Like
