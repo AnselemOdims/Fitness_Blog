@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def new
-    @post = Post.includes(:comments, :likes).find(params[:post_id])
     @comment = Comment.new
+    @post = Post.includes(:comments, :likes).find(params[:post_id])
   end
 
   def create
@@ -10,11 +10,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        flash.now[:success] = 'Comment was made successfully'
-        format.html { redirect_to user_post_path(current_user, @comment.post) }
+        format.html { redirect_to user_post_path(current_user, @comment.post), notice: 'Comment was made successfully' }
       else
-        flash.now[:error] = 'Comment could not be saved'
-        format.html { render :new }
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end

@@ -61,3 +61,14 @@ a {
 main {
   padding-left: 60px;
 }
+
+.flash-msg {
+  padding: 10px 0;
+  width: 100%;
+  font-family: $font-1;
+  border-radius: 3px;
+  background: rgb(176, 248, 176);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}

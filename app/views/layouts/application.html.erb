@@ -13,13 +13,12 @@
   <body>
     <%= render 'shared/header' %>
     <% flash.each do |type, msg| %>
-      <div>
+      <div class="flash-msg">
         <%= msg %>
       </div>
     <% end %>
     <main>
       <%= yield %>
     </main>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
   </body>
 </html>

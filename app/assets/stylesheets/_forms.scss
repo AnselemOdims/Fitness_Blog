@@ -7,7 +7,7 @@
 
     margin-top: 40px;
 
-    > div {
+    >div {
       width: 70%;
       font-family: $font-1;
 
@@ -77,5 +77,45 @@
     border: none;
     border-bottom: solid 3px $accent-color-1;
     margin-top: 3px;
+  }
+}
+
+.error {
+  margin: 0;
+  color: red;
+  font-family: $font-1;
+  text-align: left;
+}
+
+.field_with_errors > input[type='text'] {
+  outline: solid 2px red;
+}
+
+.field.check {
+  display: flex;
+}
+
+.field.check > input {
+  width: 3%;
+  margin-right: 5px;
+}
+
+.extras {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-family: $font-1;
+
+  >a {
+    margin-right: 20px;
+
+    &:first-of-type {
+      font-weight: bold;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-color-1;
+    }
   }
 }
