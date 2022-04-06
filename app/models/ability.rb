@@ -10,6 +10,7 @@ class Ability
     else
       can :manage, Post, author: user
       can :manage, Comment, author: user
+      can :manage, Like, author: user
       can :read, :all
     end
     #

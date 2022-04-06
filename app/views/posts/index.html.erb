@@ -1,7 +1,7 @@
 <section class='all-posts'>
   <% if @posts.empty? %>
     <p>User has no posts yet</p>
-  <% end %>
+  <% else %>
   <div class="show-user" >
     <%= render "shared/user", :user => @posts[0].author %>
   </div>
@@ -23,4 +23,5 @@
       </li>
     <% end %>
   </ul>
+  <% end %>
 </section>

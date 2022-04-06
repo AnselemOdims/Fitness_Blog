@@ -8,6 +8,9 @@
       </p>
     </div>
     <p class="bold"><%= @post.text %></p>
+    <% if can? :destroy, @post %>
+    <%= button_to 'Delete Post', posts_delete_path, method: :delete %>
+  <% end %>
   </div>
   <% if @post.comments != [] %>
   <div class="comments">

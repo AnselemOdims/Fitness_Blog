@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @posts = Post.includes(:comments, :likes).where(author_id: params[:user_id])
   end
 
   def show
     @post = Post.includes(:comments, :likes).find(params[:id])
+    authorize! :destroy, @post
   end
 
   def new
@@ -28,12 +29,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @post = @user.posts.find(params[:id])
-    @post.comments.destroy_all
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
     @post.destroy
     flash[:notice] = 'Post deleted'
-    redirect_to user_posts_path(@user)
+    redirect_to user_posts_path(@post.author)
   end
 
   private
