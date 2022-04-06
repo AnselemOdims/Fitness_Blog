@@ -9,7 +9,7 @@
       </p>
       <div>
         <% if can? :destroy, post %>
-          <%= link_to 'Delete', user_post_path(post.author, post), method: :destroy, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Delete', user_posts_path(post.author), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
         <%= link_to new_post_comment_path(post) do %>
           <%= image_tag("comment.svg")%>
