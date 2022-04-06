@@ -29,6 +29,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = @user.posts.find(params[:id])
     @post.destroy
+    flash[:notice] = "Post deleted"
     redirect_to user_posts_path(@user)
   end
 

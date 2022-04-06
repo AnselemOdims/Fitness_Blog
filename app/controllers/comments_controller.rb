@@ -10,11 +10,20 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to user_post_path(current_user, @comment.post), notice: 'Comment was made successfully' }
+        format.html { redirect_to user_post_path(current_user, @comment.post), notice: "Comment was made successfully" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @user = current_user
+    @comment = @user.posts.find(params[:post_id]).comments.find(params[:id])
+    @comment.destroy
+    flash[:notice] = "Comment deleted"
+
+    redirect_to user_post_path(@user, @comment.post)
   end
 
   private
