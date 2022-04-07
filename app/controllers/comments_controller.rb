@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
     @post = Post.includes(:comments, :likes).find(params[:post_id])
@@ -15,6 +17,14 @@ class CommentsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @comment = Comment.find_by(post_id: params[:post_id])
+    authorize! :destroy, @comment
+    @comment.destroy
+    flash[:notice] = 'Comment deleted successfully'
+    redirect_to user_post_path(@comment.author, @comment.post)
   end
 
   private

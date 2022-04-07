@@ -7,10 +7,12 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :comments, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id', dependent: :destroy
-  # validates :name, presence: true
-  # validates :email, presence: true, :uniqueness => { :case_sensitive => false }
 
   def fetch_recent_posts
     posts.order('created_at DESC').limit(3)
+  end
+
+  def admin?
+    role == 'admin'
   end
 end
