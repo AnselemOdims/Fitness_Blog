@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
-  
+
   def new
     @comment = Comment.new
     @post = Post.includes(:comments, :likes).find(params[:post_id])
