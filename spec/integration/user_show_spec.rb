@@ -1,19 +1,22 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "Users page", type: :feature do
+RSpec.describe 'Users page', type: :feature do
   before :each do
-    @user1 = User.create!(email: "johndo@gmail.com", password: "123abc", 
-    name: "John", bio: "Lorem Ipsum...", 
-    photo:"https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg")
-    
+    @user1 = User.create!(email: 'johndo@gmail.com', password: '123abc',
+                          name: 'John', bio: 'Lorem Ipsum...',
+                          photo: 'https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg')
+
     visit '/users/sign_in'
     fill_in 'Username/Email', with: 'johndo@gmail.com'
     fill_in 'Password', with: '123abc'
     click_button 'Log in'
-    
-    @post1 = @user1.posts.create!(title: "testing", text: "i am here to write test cases", comments_counter: 0, likes_counter: 0)
-    @post2 = @user1.posts.create!(title: "testing2", text: "i am here to write test cases4", comments_counter: 0, likes_counter: 0)
-    @user1.posts.create!(title: "testing3", text: "i am here to write test cases4", comments_counter: 0, likes_counter: 0)
+
+    @post1 = @user1.posts.create!(title: 'testing', text: 'i am here to write test cases', comments_counter: 0,
+                                  likes_counter: 0)
+    @post2 = @user1.posts.create!(title: 'testing2', text: 'i am here to write test cases4', comments_counter: 0,
+                                  likes_counter: 0)
+    @user1.posts.create!(title: 'testing3', text: 'i am here to write test cases4', comments_counter: 0,
+                         likes_counter: 0)
 
     visit user_path(@user1)
   end
@@ -27,12 +30,12 @@ RSpec.describe "Users page", type: :feature do
     expect(page).to have_content('John')
   end
 
-  it "should display the number of posts" do
-    expect(page).to have_content("Number of posts:3")
+  it 'should display the number of posts' do
+    expect(page).to have_content('Number of posts:3')
   end
 
   it "should display the user's bio" do
-    expect(page).to have_content("Lorem Ipsum..")
+    expect(page).to have_content('Lorem Ipsum..')
   end
 
   it "should display the user's first 3 posts" do

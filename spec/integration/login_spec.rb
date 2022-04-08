@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe 'Login', type: :feature do
   before :each do
-    @user = User.create(email: 'johndoe@gmail.com', password: '123abc', name: 'John', bio:'Lorem Ipsum...')
+    @user = User.create(email: 'johndoe@gmail.com', password: '123abc', name: 'John', bio: 'Lorem Ipsum...')
     visit '/users/sign_in'
   end
 
@@ -35,5 +35,3 @@ RSpec.describe 'Login', type: :feature do
     expect(page).to have_content('Signed in successfully.')
   end
 end
-
- 
