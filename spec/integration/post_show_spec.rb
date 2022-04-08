@@ -50,4 +50,9 @@ RSpec.describe "Posts page", type: :feature do
   it "should display some of the post's body" do
     expect(page).to have_content("i am here to write test cases 1")
   end
+
+  it "should display the username of each commenter on the post" do
+    expect(page).to have_content("John")
+    expect(page).to have_content("Patrick")
+  end
 end
