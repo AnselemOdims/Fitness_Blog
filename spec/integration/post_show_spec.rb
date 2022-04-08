@@ -30,4 +30,8 @@ RSpec.describe "Posts page", type: :feature do
 
     visit user_post_path(@user1, @post1)
   end
+
+  it "should show the post's title" do
+    expect(page).to have_content("testing1")
+  end
 end
