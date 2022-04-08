@@ -64,4 +64,9 @@ RSpec.describe "Posts page", type: :feature do
     expect(page).to have_content("comment5")
     expect(page).to have_content("comment6")
   end
+
+  it "should see the create post button and it navigates to the new post page" do
+    click_link "Create Post"
+    expect(current_path).to eq(new_post_path)
+  end
 end
