@@ -4,18 +4,16 @@ require 'rails_helper'
 RSpec.describe 'Login', type: :feature do
   before :each do
     @user = User.create(email: 'johndoe@gmail.com', password: '123abc', name: 'John', bio:'Lorem Ipsum...')
+    visit '/users/sign_in'
   end
 
-  # it 'displays the username, password and submit inputs' do
-  #   visit '/users/sign_in'
-  #   # user_email = find_field()
-  #   # user_password = find_field('Password')
-  #   # submit_button = find_button('Log in')
-  #   expect(page).to have_content('Username/Email')
-  # end
+  it 'displays the username, password and submit inputs' do
+    expect(page).to have_field('Username/Email')
+    expect(page).to have_field('Password')
+    expect(page).to have_button('Log in')
+  end
 
   it 'displays an error and does not sign the user in' do
-    visit '/users/sign_in'
     fill_in 'Username/Email', with: ''
     fill_in 'Password', with: ''
     click_button 'Log in'
@@ -23,7 +21,6 @@ RSpec.describe 'Login', type: :feature do
   end
 
   it 'displays an error for invalid credentials' do
-    visit '/users/sign_in'
     fill_in 'Username/Email', with: 'johndoe@gmail.com'
     fill_in 'Password', with: '123'
     click_button 'Log in'
@@ -31,7 +28,6 @@ RSpec.describe 'Login', type: :feature do
   end
 
   it 'displays an error for valid credentials' do
-    visit '/users/sign_in'
     fill_in 'Username/Email', with: 'johndoe@gmail.com'
     fill_in 'Password', with: '123abc'
     click_button 'Log in'
