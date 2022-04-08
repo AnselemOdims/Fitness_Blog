@@ -55,4 +55,13 @@ RSpec.describe "Posts page", type: :feature do
     expect(page).to have_content("John")
     expect(page).to have_content("Patrick")
   end
+
+  it "should display the comment each commentor left" do
+    expect(page).to have_content("comment1")
+    expect(page).to have_content("comment2")
+    expect(page).to have_content("comment3")
+    expect(page).to have_content("comment4")
+    expect(page).to have_content("comment5")
+    expect(page).to have_content("comment6")
+  end
 end
