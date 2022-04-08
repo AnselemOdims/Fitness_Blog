@@ -24,9 +24,6 @@ default: &default
 development:
   <<: *default
   database: fitness_blog_development
-  host: localhost
-  username: postgres
-  password: ahmed
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
