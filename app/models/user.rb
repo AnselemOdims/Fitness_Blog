@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable
+          :lockable, :timeoutable, :trackable
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :comments, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id', dependent: :destroy
