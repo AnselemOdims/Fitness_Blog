@@ -24,5 +24,10 @@ RSpec.describe "Posts page", type: :feature do
     @post1.comments.create!(author: @user1, text: "comment4")
     @post1.comments.create!(author: @user2, text: "comment5")
     @post1.comments.create!(author: @user2, text: "comment6")
+
+    @post1.likes.create!(author: @user1)
+    @post1.likes.create!(author: @user2)
+
+    visit user_post_path(@user1, @post1)
   end
 end
