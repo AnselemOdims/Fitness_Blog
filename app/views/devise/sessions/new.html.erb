@@ -6,7 +6,7 @@
 <div class="form-group">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      <%= f.text_field :login, autofocus: true, autocomplete: :login, placeholder: "Username/Email" %>
     </div>
 
     <div class="field">
