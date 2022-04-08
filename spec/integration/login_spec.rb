@@ -13,6 +13,14 @@ RSpec.describe 'Login', type: :feature do
     click_button 'Log in'
     expect(page).to have_content('Invalid Username/Email or Password')
   end
+
+  it 'displays an error for invalid credentials' do
+    visit '/users/sign_in'
+    fill_in 'Username/Email', with: 'johndoe@gmail.com'
+    fill_in 'Password', with: '123'
+    click_button 'Log in'
+    expect(page).to have_content('Invalid Username/Email or Password')
+  end
 end
 
  
