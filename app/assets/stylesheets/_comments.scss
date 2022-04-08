@@ -81,7 +81,6 @@
   top: 35vh;
   right: 0;
   background: $primary-color-1;
-  border: solid 1px red;
   color: #fff;
   border-radius: 12px 0 0 12px;
   padding: 18px;
@@ -110,6 +109,17 @@
 
     img {
       transform: rotate(360deg);
+    }
+  }
+
+  &.del-btn {
+    background: #f96f53;
+    border: none;
+    top: 45vh;
+    cursor: pointer;
+
+    img {
+      width: 15px;
     }
   }
 }
