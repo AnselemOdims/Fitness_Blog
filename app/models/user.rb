@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  attr_writer :login
-
+  include Devise::JWT::RevocationStrategies::JTIMatcher
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :lockable, :timeoutable, :trackable
+         :confirmable, :lockable, :timeoutable, :trackable,
+         :jwt_authenticatable, jwt_revocation_strategy: self
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :comments, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id', dependent: :destroy
