@@ -13,7 +13,7 @@
         <div class="comments">
           <ul class="progress-bar">
             <% post.recent_comments.each do |comment| %>
-              <li>
+              <li class="comments-list" >
                 <p><%= comment.author.name %>: <%= comment.text %></p>
               </li>
             <% end %>
@@ -24,6 +24,7 @@
     <% end %>
   </ul>
   <% end %>
+  <%= button_to 'View more posts' %>
   <%= link_to new_post_path do %>
     <div class="posts-btn">
       <%= image_tag 'add.svg' %>

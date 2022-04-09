@@ -4,9 +4,9 @@
 </div>
 
 <div class="form-group">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      <%= f.text_field :login, autofocus: true, autocomplete: :login, placeholder: "Username/Email" %>
     </div>
 
     <div class="field">
@@ -19,7 +19,7 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-
+    <%= render "devise/shared/error_messages", resource: resource %>
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>

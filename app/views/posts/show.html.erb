@@ -8,9 +8,6 @@
       </p>
     </div>
     <p class="bold"><%= @post.text %></p>
-    <% if can? :destroy, @post %>
-    <%= button_to 'Delete Post', posts_delete_path, method: :delete %>
-  <% end %>
   </div>
   <% if @post.comments != [] %>
   <div class="comments">
@@ -32,4 +29,10 @@
       <p>Create Post</p>
     </div>
   <% end %>
+  <% if can? :destroy, @post %>
+      <%= button_to posts_delete_path, method: :delete, class: "posts-btn del-btn" do %>
+        <%= image_tag 'delete.svg' %>
+         <p>Delete Post</p>
+      <% end %>
+    <% end %>
 </section>
