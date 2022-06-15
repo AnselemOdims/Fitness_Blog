@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id', dependent: :destroy
   validates :name, presence: true
-  validates_format_of :name, with: /^[a-zA-Z0-9_.]*$/, multiline: true
 
   def fetch_recent_posts
     posts.order('created_at DESC').limit(3)
