@@ -86,3 +86,23 @@ li.post {
 .all-posts {
   margin-bottom: 50px;
 }
+
+.view-post-btn {
+
+  button {
+
+
+  @include button-1;
+
+      margin-top: 10px;
+      width: 20%;
+      background: #fff;
+      font-family: $font-1;
+      font-size: 16px;
+
+      &:hover {
+        background: $primary-color-1;
+        color: #fff;
+      }
+    }
+}
