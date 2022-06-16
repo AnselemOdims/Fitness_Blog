@@ -1,6 +1,10 @@
 # Fitness_Blog
 >  Fitness_blog is a blog app where users post about their fitness journey. Users can comment on and like other users' posts. It is built using Ruby on Rails framework and styled with SASS
 
+## Mini Demo
+![fitness_blog](https://user-images.githubusercontent.com/43995830/174019509-5eda31e9-48db-452f-8bfc-306fcdd4a906.gif)
+
+
 ## Built With
 
 - Ruby
